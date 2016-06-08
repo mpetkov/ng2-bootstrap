@@ -62,7 +62,7 @@ var ModalDirective = (function () {
     /** Host element manipulations */
     // @HostBinding(`class.${ClassName.IN}`) private _addClassIn:boolean;
     ModalDirective.prototype.onClick = function (event) {
-        if (event.target === this.element.nativeElement) {
+        if (this.config.backdrop !== 'static' && event.target === this.element.nativeElement) {
             this.hide(event);
         }
     };
@@ -289,36 +289,36 @@ var ModalDirective = (function () {
         return scrollbarWidth;
     };
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object), 
+        core_1.Input(),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], ModalDirective.prototype, "config", null);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ModalDirective.prototype, "onShow", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ModalDirective.prototype, "onShown", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ModalDirective.prototype, "onHide", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ModalDirective.prototype, "onHidden", void 0);
     __decorate([
-        core_1.HostListener('click', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Object]), 
+        core_1.HostListener('click', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [Object]),
         __metadata('design:returntype', void 0)
     ], ModalDirective.prototype, "onClick", null);
     __decorate([
-        core_1.HostListener('keydown.esc'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('keydown.esc'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], ModalDirective.prototype, "onEsc", null);
     ModalDirective = __decorate([
@@ -327,7 +327,7 @@ var ModalDirective = (function () {
             exportAs: 'bs-modal'
         }),
         __param(2, core_1.Inject(platform_browser_1.DOCUMENT)),
-        __param(3, core_1.Inject(components_helper_service_1.ComponentsHelper)), 
+        __param(3, core_1.Inject(components_helper_service_1.ComponentsHelper)),
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, Object, components_helper_service_1.ComponentsHelper])
     ], ModalDirective);
     return ModalDirective;
