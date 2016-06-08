@@ -3,21 +3,21 @@
   "version": "1.0.17",
   "description": "angular2 bootstrap components",
   "scripts": {
-    "flow.install:typings": "./node_modules/.bin/typings install",
+    "flow.install:typings": "typings install",
     "flow.compile": "npm run flow.install:typings && npm run flow.compile:common && npm run flow.compile:system ",
-    "flow.compile:common": "./node_modules/.bin/tsc",
+    "flow.compile:common": "tsc",
     "flow.compile:system": "./.config/bundle-system.js",
-    "flow.copy:src": "./node_modules/.bin/cpy ng2-bootstrap.ts \"components/*.ts\" ts --parents",
-    "flow.clean": "./node_modules/.bin/del bundles coverage demo-build typings \"components/**/*.+(js|d.ts|js.map)\" dist \"ng2-bootstrap.+(js|d.ts|js.map)\"",
+    "flow.copy:src": "cpy ng2-bootstrap.ts \"components/*.ts\" ts --parents",
+    "flow.clean": "del bundles coverage demo-build typings \"components/**/*.+(js|d.ts|js.map)\" dist \"ng2-bootstrap.+(js|d.ts|js.map)\"",
     "flow.deploy:gh-pages": "npm run flow.build:prod && ./node_modules/.bin/gh-pages -d demo-build",
-    "flow.eslint": "./node_modules/.bin/eslint --ignore-path .gitignore  --ext js --fix . .config",
-    "flow.tslint": "./node_modules/.bin/gulp lint",
+    "flow.eslint": "eslint --ignore-path .gitignore  --ext js --fix . .config",
+    "flow.tslint": "gulp lint",
     "flow.lint": "npm run flow.eslint && npm run flow.tslint",
-    "flow.changelog": "./node_modules/.bin/conventional-changelog -i CHANGELOG.md -s -p angular -v",
-    "flow.github-release": "./node_modules/.bin/conventional-github-releaser -p angular",
+    "flow.changelog": "conventional-changelog -i CHANGELOG.md -s -p angular -v",
+    "flow.github-release": "conventional-github-releaser -p angular",
     "flow.build:prod": "NODE_ENV=production ./node_modules/.bin/webpack --progress --color",
-    "flow.build:dev": "./node_modules/.bin/webpack --progress --color",
-    "flow.serve:dev": "./node_modules/.bin/webpack-dev-server --hot --inline --colors --display-error-details --display-cached",
+    "flow.build:dev": "webpack --progress --color",
+    "flow.serve:dev": "webpack-dev-server --hot --inline --colors --display-error-details --display-cached",
     "flow.serve:prod": "NODE_ENV=production ./node_modules/.bin/webpack-dev-server --hot --inline --colors --display-error-details --display-cached",
     "prepublish": "npm run flow.clean && npm run flow.compile",
     "postpublish": "npm run flow.deploy:gh-pages",
@@ -36,7 +36,10 @@
     "angularjs",
     "twitter-bootstrap"
   ],
-  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "author": {
+    "name": "Dmitriy Shekhovtsov",
+    "email": "valorkin@gmail.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -60,7 +63,6 @@
     "@angular/core": "^2.0.0-rc.1",
     "@angular/platform-browser": "^2.0.0-rc.1",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
-    "@angular/router-deprecated": "2.0.0-rc.1",
     "async": "1.5.2",
     "bootstrap": "3.3.6",
     "codecov": "1.0.1",
@@ -106,7 +108,7 @@
     "require-dir": "0.3.0",
     "rxjs": "5.0.0-beta.6",
     "source-map-loader": "0.1.5",
-    "systemjs-builder": "0.15.19",
+    "systemjs-builder": "0.15.18",
     "ts-loader": "0.8.2",
     "tslint-config-valorsoft": "1.0.3",
     "typescript": "1.8.10",
@@ -114,5 +116,31 @@
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1",
     "zone.js": "0.6.12"
-  }
+  },
+  "gitHead": "f92bc047416c9d97d727d50aa1dae68d0c8efdfb",
+  "_id": "ng2-bootstrap@1.0.17",
+  "_shasum": "474f987ec14e9c2bb2d5ad3dc22bbc10db1eaca1",
+  "_from": "ng2-bootstrap@>=1.0.17 <2.0.0",
+  "_npmVersion": "3.8.9",
+  "_nodeVersion": "6.2.0",
+  "_npmUser": {
+    "name": "valorkin",
+    "email": "valorkin@gmail.com"
+  },
+  "dist": {
+    "shasum": "474f987ec14e9c2bb2d5ad3dc22bbc10db1eaca1",
+    "tarball": "https://registry.npmjs.org/ng2-bootstrap/-/ng2-bootstrap-1.0.17.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "valorkin",
+      "email": "valorkin@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/ng2-bootstrap-1.0.17.tgz_1464702338980_0.26414189185015857"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ng2-bootstrap/-/ng2-bootstrap-1.0.17.tgz"
 }
